@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group X</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- Added favicon link -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            emailjs.init("a14aMUBBNlTbFIEkR");  // Your EmailJS Public Key
+        });
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #1a1a1a;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 0 0 10px #a100ff;
+        }
+        .container {
+            padding: 20px;
+        }
+        .neon-text {
+            color: #a100ff;
+            text-shadow: 0 0 5px #a100ff, 0 0 10px #a100ff;
+        }
+        .button {
+            background: #a100ff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 10px #a100ff;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background: #8000cc;
+            box-shadow: 0 0 15px #8000cc;
+        }
+        .form-container {
+            display: none;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background-color: #a100ff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .form-container button:hover {
+            background-color: #8000cc;
+        }
+    </style>
+</head>
+<body>
+    <header>Group X</header>
+    <div class="container">
+        <h1 class="neon-text">Welcome to Group X</h1>
+        <p>We are the students of 8N joining together as Group X. We're just a bunch of idiots messing around in class, but we lock in during class time leaving all the fun aside.</p>
+        <h2 class="neon-text">Key Members</h2>
+        <p>Hadriel Rovin | Shamus Mitchell | Ayaan Shariff</p>
+        <button class="button" onclick="showForm()">Join Us</button>
+
+        <h3 class="neon-text">Rules for the members of the X Group</h3>
+        <ul>
+            <li>Be Respectful - Do not annoy others on purpose</li>
+            <li>No Swearing - Mind Your Words</li>
+            <li>No Talking - This only applies when a class is happening</li>
+            <li>No Patriotism to your state or country</li>
+            <li>No Racism - Jokes Allowed unless it's offensive</li>
+            <li>Be Responsible in class</li>
+        </ul>
+
+        <h3 class="neon-text">Rules For The Weekly Leader</h3>
+        <ul>
+            <li>You must not boss around people</li>
+            <li>There must be a voting for any change you make</li>
+            <li>You strictly can't make any changes to the group unless everyone agrees</li>
+        </ul>
+
+        <h3 class="neon-text">Weekly Leader</h3>
+        <ul>
+            <li>Monday to Friday</li>
+            <li>Rolling will be conducted on Friday Evenings or on Saturday</li>
+        </ul>
+
+        <p>@here</p>
+        
+        <div class="form-container" id="formContainer">
+            <h3 class="neon-text">Join Group X Form</h3>
+            <form id="joinForm">
+                <label for="name">1. What is your name?</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="class">2. What's your class and section?</label>
+                <input type="text" id="class" name="class" required><br>
+
+                <label for="reason">3. Why do you want to join us?</label>
+                <textarea id="reason" name="reason" rows="4" required></textarea><br>
+
+                <label for="rules">4. Will you follow our rules?</label>
+                <input type="text" id="rules" name="rules" required><br>
+
+                <label for="sitWithUs">5. Do you agree to sit with us?</label>
+                <input type="text" id="sitWithUs" name="sitWithUs" required><br>
+
+                <button type="submit" class="button">Submit</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 Group X. Be Skibidi.
+    </footer>
+
+    <script>
+        function showForm() {
+            document.getElementById('formContainer').style.display = 'block';
+        }
+
+        document.getElementById('joinForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const formData = {
+                to_name: "Group X Admin",  
+                from_name: document.getElementById('name').value,
+                class_section: document.getElementById('class').value,
+                reason: document.getElementById('reason').value,
+                rules_agreement: document.getElementById('rules').value,
+                sit_with_us: document.getElementById('sitWithUs').value,
+            };
+
+            emailjs.send("groupxgmail", "template_y37stws", formData)
+                .then(function(response) {
+                    alert('Form Submitted Successfully! We will review your responses.');
+                    document.getElementById('formContainer').style.display = 'none';
+                    document.getElementById('joinForm').reset();
+                }, function(error) {
+                    console.error("EmailJS Error:", error);
+                    alert('Failed to send the form. Please try again.');
+                });
+        });
+    </script>
+</body>
+</html>
