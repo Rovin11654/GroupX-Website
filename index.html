@@ -4,14 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group X</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- Added favicon link -->
-    
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- Ensure this file exists -->
+
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             emailjs.init("a14aMUBBNlTbFIEkR");  // Your EmailJS Public Key
+
+            window.showForm = function () {
+                document.getElementById('formContainer').style.display = 'block';
+            };
+
+            document.getElementById('joinForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const formData = {
+                    to_name: "Group X Admin",  
+                    from_name: document.getElementById('name').value,
+                    reason: document.getElementById('reason').value,
+                };
+
+                emailjs.send("groupxgmail", "template_y37stws", formData)
+                    .then(function(response) {
+                        alert('Form Submitted Successfully! We will review your responses.');
+                        document.getElementById('formContainer').style.display = 'none';
+                        document.getElementById('joinForm').reset();
+                    }, function(error) {
+                        console.error("EmailJS Error:", error);
+                        alert('Failed to send the form. Please try again.');
+                    });
+            });
         });
     </script>
+
     <style>
         body {
             background-color: #0a0a0a;
@@ -80,8 +105,10 @@
     <div class="container">
         <h1 class="neon-text">Welcome to Group X</h1>
         <p>We are the students of 8N joining together as Group X. We're just a bunch of idiots messing around in class, but we lock in during class time leaving all the fun aside.</p>
+        
         <h2 class="neon-text">Key Members</h2>
         <p>Hadriel Rovin | Shamus Mitchell | Ayaan Shariff</p>
+
         <button class="button" onclick="showForm()">Join Us</button>
 
         <h3 class="neon-text">Rules for the members of the X Group</h3>
@@ -108,7 +135,7 @@
         </ul>
 
         <p>@here</p>
-        
+
         <div class="form-container" id="formContainer">
             <h3 class="neon-text">Join Group X Form</h3>
             <form id="joinForm">
@@ -122,34 +149,9 @@
             </form>
         </div>
     </div>
+
     <footer>
         &copy; 2025 Group X. Be Skibidi.
     </footer>
-
-    <script>
-        function showForm() {
-            document.getElementById('formContainer').style.display = 'block';
-        }
-
-        document.getElementById('joinForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const formData = {
-                to_name: "Group X Admin",  
-                from_name: document.getElementById('name').value
-                reason: document.getElementById('reason').value,
-            };
-
-            emailjs.send("groupxgmail", "template_y37stws", formData)
-                .then(function(response) {
-                    alert('Form Submitted Successfully! We will review your responses.');
-                    document.getElementById('formContainer').style.display = 'none';
-                    document.getElementById('joinForm').reset();
-                }, function(error) {
-                    console.error("EmailJS Error:", error);
-                    alert('Failed to send the form. Please try again.');
-                });
-        });
-    </script>
 </body>
 </html>
