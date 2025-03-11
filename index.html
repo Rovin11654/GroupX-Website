@@ -3,159 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group X</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- Ensure this file exists -->
+    <title>Group X - The Elite Crew</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         body {
-            background-color: #0a0a0a;
+            background-color: #121212;
             color: #fff;
-            font-family: Arial, sans-serif;
-            text-align: center;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            text-align: center;
         }
+
         header {
-            background: #1a1a1a;
-            padding: 20px;
-            font-size: 24px;
+            background-color: #2c3e50;
+            color: #9b59b6;
+            padding: 20px 0;
+            font-size: 36px;
             font-weight: bold;
-            text-shadow: 0 0 10px #a100ff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(155, 89, 182, 0.5);
         }
+
         .container {
             padding: 20px;
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
         }
-        .neon-text {
-            color: #a100ff;
-            text-shadow: 0 0 5px #a100ff, 0 0 10px #a100ff;
+
+        h1, h2, h3 {
+            color: #9b59b6;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
         }
+
         .button {
-            background: #a100ff;
+            background-color: #9b59b6;
             color: #fff;
-            padding: 10px 20px;
+            padding: 15px 30px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            box-shadow: 0 0 10px #a100ff;
-            transition: 0.3s;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.4s ease-in-out;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
+
         .button:hover {
-            background: #8000cc;
-            box-shadow: 0 0 15px #8000cc;
+            background-color: #8e44ad;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #9b59b6, 0 0 30px #8e44ad;
         }
+
+        .profile-link {
+            color: #9b59b6;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .profile-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 -4px 12px rgba(155, 89, 182, 0.5);
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #9b59b6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Form Style */
         .form-container {
             display: none;
-            background-color: #333;
+            background: rgba(0, 0, 0, 0.05);
             padding: 20px;
             border-radius: 8px;
             margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
+
         .form-container input, .form-container textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
-            border: none;
+            border: 1px solid #ccc;
             border-radius: 5px;
+            background: rgba(0, 0, 0, 0.05);
+            color: #000;
         }
+
         .form-container button {
-            background-color: #a100ff;
-            padding: 10px 20px;
+            background-color: #9b59b6;
+            padding: 12px 24px;
             border-radius: 5px;
             cursor: pointer;
-            transition: 0.3s;
+            border: none;
+            color: #fff;
+            font-size: 16px;
         }
+
         .form-container button:hover {
-            background-color: #8000cc;
+            background-color: #8e44ad;
         }
     </style>
 </head>
 <body>
-    <header>Group X</header>
+    <header>Group X - The Elite Crew</header>
     <div class="container">
-        <h1 class="neon-text">Welcome to Group X</h1>
-        <p>We are the students of 8N joining together as Group X. We're just a bunch of idiots messing around in class, but we lock in during class time leaving all the fun aside.</p>
+        <h1>Welcome to Group X</h1>
+        <p>We are the students of 8N joining together as Group X. Just a bunch of legends having fun but serious when needed.</p>
         
-        <h2 class="neon-text">Key Members</h2>
-        <p>Hadriel Rovin | Shamus Mitchell | Ayaan Shariff</p>
+        <h2>Key Members</h2>
+        <p>
+            <a href="hadriel.html" class="profile-link">Hadriel Rovin</a> |
+            <a href="shamus.html" class="profile-link">Shamus Mitchell</a> |
+            <a href="ayaan.html" class="profile-link">Ayaan Sharief</a>
+        </p>
 
         <button class="button" onclick="showForm()">Join Us</button>
 
-        <h3 class="neon-text">Rules for the members of the X Group</h3>
-        <ul>
-            <li>Be Respectful - Do not annoy others on purpose</li>
-            <li>No Swearing - Mind Your Words</li>
-            <li>No Talking - This only applies when a class is happening</li>
-            <li>No Patriotism to your state or country</li>
-            <li>No Racism - Jokes Allowed unless it's offensive</li>
-            <li>Be Responsible in class</li>
-        </ul>
-
-        <h3 class="neon-text">Rules For The Weekly Leader</h3>
-        <ul>
-            <li>You must not boss around people</li>
-            <li>There must be a voting for any change you make</li>
-            <li>You strictly can't make any changes to the group unless everyone agrees</li>
-        </ul>
-
-        <h3 class="neon-text">Weekly Leader</h3>
-        <ul>
-            <li>Monday to Friday</li>
-            <li>Rolling will be conducted on Friday Evenings or on Saturday</li>
-        </ul>
-
-        <p>@here</p>
-
         <div class="form-container" id="formContainer">
-            <h3 class="neon-text">Join Group X Form</h3>
-            <form id="joinForm">
-                <label for="name">1. What is your name?</label>
-                <input type="text" id="name" name="name" required><br>
+            <h3 class="neon-text">Join Group X</h3>
+            <form id="joinForm" onsubmit="submitForm(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required><br>
+                
+                <label for="reason">Why do you want to join?</label>
+                <textarea id="reason" rows="4" required></textarea><br>
 
-                <label for="reason">2. Why do you want to join us?</label>
-                <textarea id="reason" name="reason" rows="4" required></textarea><br>
-
-                <label for="gmail">3. What is your gmail?</label>
-                <textarea id="gmail" name="gmail" rows="1" required></textarea><br>
-
+                <label for="gmail">Your Gmail:</label>
+                <input type="email" id="gmail" required><br>
+                
                 <button type="submit" class="button">Submit</button>
             </form>
         </div>
+
+        <h3>Group Rules</h3>
+        <ul>
+            <li>Be Respectful - No intentional annoyance</li>
+            <li>No Swearing - Keep it clean</li>
+            <li>No Talking - When class is on</li>
+            <li>No Patriotism - We are one team</li>
+            <li>No Racism - Jokes allowed, but not offensive</li>
+            <li>Be Responsible - In class and beyond</li>
+        </ul>
+
+        <h3>Weekly Leader Rules</h3>
+        <ul>
+            <li>Don't boss people around</li>
+            <li>Voting required for changes</li>
+            <li>No changes unless everyone agrees</li>
+        </ul>
+
+        <h3>Weekly Leader Rotation</h3>
+        <ul>
+            <li>Monday to Friday</li>
+            <li>Rolling occurs on Friday evening or Saturday</li>
+        </ul>
+
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:groupxdps@gmail.com">groupxdps@gmail.com</a></p>
     </div>
 
     <footer>
-        &copy; 2025 Group X. Be Skibidi.
+        &copy; 2025 Group X | Stay Epic
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            emailjs.init("a14aMUBBNlTbFIEkR");  // Your EmailJS Public Key
+        // Show the Join Us form
+        function showForm() {
+            document.getElementById('formContainer').style.display = 'block';
+        }
 
-            window.showForm = function () {
-                console.log("Button clicked, showing form...");
-                const formContainer = document.getElementById('formContainer');
-                formContainer.style.display = 'block';
-            };
+        // Submit form and send email (simplified email)
+        function submitForm(event) {
+            event.preventDefault(); // Prevent form from reloading the page
 
-            document.getElementById('joinForm').addEventListener('submit', function(event) {
-                event.preventDefault();
-                
-                const formData = {
-                    to_name: "Group X Admin",  
-                    from_name: document.getElementById('name').value,
-                    reason: document.getElementById('reason').value,
-                };
+            const name = document.getElementById('name').value;
+            const reason = document.getElementById('reason').value;
+            const gmail = document.getElementById('gmail').value;
 
-                emailjs.send("groupxgmail", "template_y37stws", formData)
-                    .then(function(response) {
-                        alert('Form Submitted Successfully! We will review your responses.');
-                        document.getElementById('formContainer').style.display = 'none';
-                        document.getElementById('joinForm').reset();
-                    }, function(error) {
-                        console.error("EmailJS Error:", error);
-                        alert('Failed to send the form. Please try again.');
-                    });
-            });
-        });
+            // Create an email URL with the form data
+            const emailBody = `Name: ${name}\n\nReason: ${reason}\n\nGmail: ${gmail}`;
+            const mailtoLink = `mailto:groupxdps@gmail.com?subject=Join%20Group%20X&body=${encodeURIComponent(emailBody)}`;
+
+            // Redirect to email client
+            window.location.href = mailtoLink;
+        }
     </script>
 </body>
 </html>
